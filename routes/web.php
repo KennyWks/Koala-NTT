@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -44,10 +44,10 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/login', [AuthenticateController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [AuthenticateController::class, 'authenticate']);
 
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [AuthenticateController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
