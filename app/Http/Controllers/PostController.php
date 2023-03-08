@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
+use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 
-class ArticleController extends Controller
+class PostController extends Controller
 { 
     public function index(){
         
@@ -22,18 +22,17 @@ class ArticleController extends Controller
             $title = ' by ' . $author->name;
         }
         
-        return view('articles', [
-            "title" => "All Article " .$title,
-            "active" => "article",
-            "rows" => Article::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
+        return view('posts', [
+            "title" => "All Post " .$title,
+            "rows" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(7)->withQueryString(),
         ]);
     }
 
-    public function show(Article $articleModel){
-        return view('article', [
-            "title" => "Single Article",
-            "active" => "article",
-            "row" => $articleModel,
+    public function show(Post $post){
+        return view('post', [
+            "title" => "Single Post",
+            "active" => "post",
+            "row" => $post,
         ]);
     }
 }

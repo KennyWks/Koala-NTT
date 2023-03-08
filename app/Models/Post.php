@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
-class Article extends Model
+class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     // protected $fillable = ['title', 'exceprt', 'body'];
     protected $guarded = ['id'];
     protected $with = ['author', 'category'];
-    protected $table = 'article'; 
+    protected $table = 'post'; 
 
     public function scopeFilter($query, array $filters){
 
@@ -39,5 +40,19 @@ class Article extends Model
 
     public function author(){
         return $this->belongsTo(User::class, 'user_id'); 
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }
