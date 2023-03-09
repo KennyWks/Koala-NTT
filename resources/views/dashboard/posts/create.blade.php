@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="POST" action="/dashboard/posts" class="mb-3">
+    <form method="POST" action="/dashboard/posts" class="mb-3" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -20,7 +20,8 @@
         </div>
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
-            <input type="text" value="{{old('slug')}}" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" readonly>
+            <input type="text" value="{{old('slug')}}" name="slug"
+                class="form-control @error('slug') is-invalid @enderror" id="slug" readonly>
             @error('slug')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -41,6 +42,17 @@
                 @endforeach
             </select>
             @error('category_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <img class="img-preview img-fluid mb-3 col-sm-5">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="image">Post Image</label>
+            <input type="file" onchange="previewImage()" class="form-control @error('image') is-invalid @enderror"
+                id="image" name="image">
+            @error('image')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
@@ -75,5 +87,19 @@
     document.addEventListener('trix-file-accept', function(e) {
         e.preventDefault();
     })
+
+    function previewImage() {
+            
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+            
+        imgPreview.style.display = 'block';
+            
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);    
+        oFReader.onload = function (oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
 </script>
 @endsection
