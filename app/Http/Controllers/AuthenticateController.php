@@ -22,6 +22,7 @@ class AuthenticateController extends Controller
 
         if(Auth::attempt($validatedData)){
             $request->session()->regenerate();
+            Auth::logoutOtherDevices($request->input('password'));
             return redirect()->intended('/dashboard');
         }
 

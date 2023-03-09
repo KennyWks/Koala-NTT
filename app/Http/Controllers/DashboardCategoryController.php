@@ -16,6 +16,7 @@ class DashboardCategoryController extends Controller
      */
     public function index()
     {
+        $this->authorize('Administrator');
         return view('dashboard.categories.index', [
             'categories' => Category::filter(request(['search']))->paginate(10)->withQueryString()
         ]);
@@ -28,6 +29,7 @@ class DashboardCategoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('Administrator');
         return view('dashboard.categories.create');
     }
 
@@ -39,6 +41,7 @@ class DashboardCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('Administrator');
         $rules = [
             'name' => 'required|max:255',
             'slug' => 'required|unique:category',
@@ -82,6 +85,7 @@ class DashboardCategoryController extends Controller
      */
     public function edit(Category $category)
     {
+        $this->authorize('Administrator');
         return view('dashboard.categories.edit', [
             'category' => $category,
         ]);
@@ -96,6 +100,7 @@ class DashboardCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $this->authorize('Administrator');
         $rules = [
             'name' => 'required|max:255',
             'slug' => 'required|unique:category',
@@ -128,6 +133,7 @@ class DashboardCategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $this->authorize('Administrator');
         $data = Post::where('category_id', $category->id)->count();
         if ($data == 0) {
             Category::destroy($category->id);

@@ -19,6 +19,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
+        $this->authorize('Writer');
         return view('dashboard.posts.index', [
             'posts' => Post::where('user_id', auth()->user()->id)->latest()->filter(request(['search']))->paginate(10)->withQueryString()
         ]);
@@ -31,6 +32,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
+        $this->authorize('Writer');
         return view('dashboard.posts.create', [
             'categories' => Category::all(),
         ]);
@@ -44,6 +46,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('Writer');
         $input = [
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
@@ -89,6 +92,7 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
+        $this->authorize('Writer');
         return view('dashboard.posts.show', [
             'post' => $post
         ]);
@@ -102,6 +106,7 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
+        $this->authorize('Writer');
         return view('dashboard.posts.edit', [
             'post' => $post,
             'categories' => Category::all(),
@@ -117,6 +122,7 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $this->authorize('Writer');
         $input = [
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
@@ -165,6 +171,7 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $this->authorize('Writer');
         if ($post->image) {
             Storage::delete($post->image);
         }

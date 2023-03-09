@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +33,14 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Biography',
             'slug' => 'biography'
+        ]);
+
+        Role::create([
+            'name' => 'Administrator',
+        ]);
+
+        Role::create([
+            'name' => 'Writer',
         ]);
 
     }
