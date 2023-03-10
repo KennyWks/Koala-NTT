@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersDetails extends Migration
+class CreateUserDivisionKoodinatorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateUsersDetails extends Migration
      */
     public function up()
     {
-        Schema::create('users_details', function (Blueprint $table) {
+        Schema::create('user_division_koodinators', function (Blueprint $table) {
             $table->id();
+            $table->string('divisi_koordinator');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateUsersDetails extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_details');
+        Schema::dropIfExists('user_division_koodinators');
     }
 }

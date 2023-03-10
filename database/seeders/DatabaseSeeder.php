@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
-use App\Models\Role;
+use App\Models\UserRole;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +19,14 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Post::factory(100)->create();
+
+        UserRole::create([
+            'name' => 'Administrator',
+        ]);
+
+        UserRole::create([
+            'name' => 'Writer',
+        ]);
     
         Category::create([
             'name' => 'Mobile development',
@@ -33,14 +41,6 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Biography',
             'slug' => 'biography'
-        ]);
-
-        Role::create([
-            'name' => 'Administrator',
-        ]);
-
-        Role::create([
-            'name' => 'Writer',
         ]);
 
     }

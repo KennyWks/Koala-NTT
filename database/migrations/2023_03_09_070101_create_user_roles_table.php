@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersMasterEducations extends Migration
+class CreateUserRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateUsersMasterEducations extends Migration
      */
     public function up()
     {
-        Schema::create('users_master_educations', function (Blueprint $table) {
+        Schema::create('user_roles', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateUsersMasterEducations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_master_educations');
+        Schema::dropIfExists('user_roles');
     }
 }
