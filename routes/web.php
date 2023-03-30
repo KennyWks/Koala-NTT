@@ -26,15 +26,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-        "name" => "Kenny",
-        "email" => "kenny.perulu@gmail.com",
-        "img" => "kenny.JPG",
-    ]);
-});
-
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
