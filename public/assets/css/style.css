@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #106eea;
+  background: #DC3545;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -511,11 +511,11 @@ h6 {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #106eea;
+  background: #DC3545;
 }
 
 #hero .btn-get-started:hover {
-  background: #247cf0;
+  background: #DC3545;
 }
 
 #hero .btn-watch-video {
@@ -529,7 +529,7 @@ h6 {
 }
 
 #hero .btn-watch-video i {
-  color: #106eea;
+  color: #DC3545;
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -537,11 +537,11 @@ h6 {
 }
 
 #hero .btn-watch-video:hover {
-  color: #106eea;
+  color: #DC3545;
 }
 
 #hero .btn-watch-video:hover i {
-  color: #3b8af2;
+  color: #DC3545;
 }
 
 @media (min-width: 1024px) {
@@ -601,8 +601,8 @@ section {
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: #e7f1fd;
-  color: #106eea;
+  background: #FDF7C3;
+  color: #DC3545;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -615,7 +615,7 @@ section {
 }
 
 .section-title h3 span {
-  color: #106eea;
+  color: #DC3545;
 }
 
 .section-title p {
@@ -1604,7 +1604,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #106eea;
+  background: #DC3545;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1613,7 +1613,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3b8af2;
+  background: #DC3545;
 }
 
 @keyframes animate-loading {

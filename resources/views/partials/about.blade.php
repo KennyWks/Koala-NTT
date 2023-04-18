@@ -23,14 +23,14 @@
                 </p>
                 <ul>
                     <li>
-                        <i class="bx bx-store-alt"></i>
+                        <i class="bx bx-store-alt text-danger"></i>
                         <div>
                             <h5>Ullamco laboris nisi ut aliquip consequat</h5>
                             <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
                         </div>
                     </li>
                     <li>
-                        <i class="bx bx-images"></i>
+                        <i class="bx bx-images text-danger"></i>
                         <div>
                             <h5>Magnam soluta odio exercitationem reprehenderi</h5>
                             <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi

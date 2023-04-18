@@ -57,6 +57,7 @@
                     <p>You can get all update from us from our social media.</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+
                         <a href="https://www.facebook.com/profile.php?id=100089880205784" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
                         <a href="https://www.instagram.com/koalantt" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
                     </div>

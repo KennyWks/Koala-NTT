@@ -3,11 +3,11 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope d-flex align-items-center"><a
-                    href="mailto:contact@example.com">koalantt2023@gmail.com</a></i>
+                    href="mailto:koalantt2023@gmail.com">koalantt2023@gmail.com</a></i>
             <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-            {{-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> --}}
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="https://www.facebook.com/profile.php?id=100089880205784" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/koalantt" class="instagram"><i class="bi bi-instagram"></i></a>
             {{-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a> --}}
@@ -28,7 +28,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
+                <li><a class="nav-link scrollto" href="/">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
                 <li><a class="nav-link scrollto " href="#portfolio">Galery</a></li>
