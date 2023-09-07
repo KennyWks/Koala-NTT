@@ -48,11 +48,11 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return User::select("users.*", "users_roles.*")->join("users_roles", "users_roles.id", "=", "users.role_id");
+        return User::select("users.*", "user_roles.*")->join("user_roles", "user_roles.id", "=", "users.role_id");
     }
 
     public function hasRole($role_name)
     {
-        return $this->roles()->where('users.id', '=', auth()->user()->id)->where('users_roles.name', '=', $role_name)->count() == 1;
+        return $this->roles()->where('users.id', '=', auth()->user()->id)->where('user_roles.name', '=', $role_name)->count() == 1;
     }
 }

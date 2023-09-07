@@ -45,7 +45,7 @@
                     <h4>Our Activities</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Coaching</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Discuss Hot Topik</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Discuss Hot Topic</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Public Policy</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Public Services</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Contribute</a></li>
